@@ -1,23 +1,3 @@
-//import { getMetadata } from '../../scripts/aem.js';
-//import { loadFragment } from '../fragment/fragment.js';
-
-/**
- * loads and decorates the footer
- * @param {Element} block The footer block element
- */
-/*export default async function decorate(block) {
-  // load footer as fragment
-  const footerMeta = getMetadata('footer');
-  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
-  const fragment = await loadFragment(footerPath);
-
-  // decorate footer DOM
-  block.textContent = '';
-  const footer = document.createElement('div');
-  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
-
-  block.append(footer);
-}*/
 export default function decorate(block) {
   const rows = [...block.children];
   const key = (r) => (r?.children?.[0]?.textContent || '').trim().toLowerCase();
@@ -41,7 +21,7 @@ export default function decorate(block) {
     addressHTML = cs[1] ? `<address class="brand-address">${cs[1].innerHTML}</address>` : '';
   }
 
-  // links: 4 columns, up to 5 rows (accept real <a> or "Label|/path" or "Label/path")
+  // links: 4 columns, up to 5 rows 
   const normalizeCell = (td) => {
     const a = td.querySelector('a');
     if (a) return `<a href="${a.getAttribute('href') || '#'}">${a.textContent.trim()}</a>`;
@@ -66,7 +46,7 @@ export default function decorate(block) {
   const bottomLeft = bottomRows[0]?.[0] || '';
   const bottomRight = bottomRows[1]?.[0] || '';
 
-  // render
+  
   block.innerHTML = `
     <footer class="site-footer v2">
       <div class="top">
