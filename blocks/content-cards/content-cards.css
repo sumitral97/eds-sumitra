@@ -1,99 +1,7 @@
-﻿/* SECTION spacing (optional, nice breathing room) */
-.content-cards-wrapper {
+﻿.content-cards-wrapper {
     padding: 56px 24px;
 }
 
-/* GRID: exactly 3 fixed-width cards, centered; wraps to next row */
-.content-cards .cc-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 360px); /* fixed card width like your ref */
-    justify-content: center; /* center short rows */
-    gap: 56px; /* big gutters (row + column) */
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 1200px; /* keeps grid centered on page */
-}
-
-/* CARD */
-.content-cards .cc-card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 0px;
-    overflow: hidden;
-    background: #0f2e55; /* navy panel */
-    color: #fff;
-    box-shadow: 0 6px 18px rgba(0,0,0,.08);
-    transition: transform .15s ease, box-shadow .15s ease;
-    max-width: 345px;
-    width: 100%;
-}
-
-    .content-cards .cc-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 24px rgba(0,0,0,.12);
-    }
-
-/* IMAGE on top */
-.content-cards .cc-media picture,
-.content-cards .cc-media img {
-    display: block;
-    width: 100%;
-    height: 230px; /* tune to your crop */
-    object-fit: cover;
-}
-
-/* PANEL (blue area) */
-.content-cards .cc-panel {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-    .content-cards .cc-panel h3 {
-        margin: 0 0 6px;
-        font-weight: 800;
-        line-height: 1.2;
-        font-size: 1.5rem; /* ~24px, bold like screenshot */
-        color: #fff;
-    }
-
-.content-cards .cc-copy {
-    color: #e7eef7; /* softer body text */
-    line-height: 1.6;
-}
-
-    .content-cards .cc-copy p {
-        margin: 0 0 10px;
-    }
-
-/* RESPONSIVE: 2-up tablet, 1-up mobile, still centered */
-@media (max-width: 1200px) {
-    .content-cards .cc-grid {
-        grid-template-columns: repeat(2, 360px);
-        gap: 40px;
-    }
-}
-
-@media (max-width: 800px) {
-    .content-cards .cc-grid {
-        grid-template-columns: 1fr; /* single column */
-        max-width: 600px; /* readable width */
-        gap: 24px;
-    }
-
-    .content-cards .cc-media picture,
-    .content-cards .cc-media img {
-        height: 200px;
-    }
-}
-/* SECTION spacing */
-.content-cards-wrapper {
-    padding: 56px 24px;
-}
-
-/* 3 fixed-width cards, centered */
 .content-cards .cc-grid {
     display: grid;
     grid-template-columns: repeat(3, 360px);
@@ -105,8 +13,6 @@
     max-width: 1200px;
 }
 
-/* Card */
-/* Card */
 .content-cards .cc-card {
     display: flex;
     flex-direction: column;
@@ -119,56 +25,46 @@
     max-width: 345px;
     width: 100%;
 }
+.content-cards .cc-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0,0,0,.12);
 
-    .content-cards .cc-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 24px rgba(0,0,0,.12);
-    }
-
-/* Image */
+}
 .content-cards .cc-media picture,
 .content-cards .cc-media img {
     display: block;
     width: 100%;
-    height: 230px;
+    height: 230px; 
     object-fit: cover;
 }
-
-/* Panel */
 .content-cards .cc-panel {
     padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-
-    .content-cards .cc-panel h3 {
-        margin: 0 0 6px;
-        font-weight: 800;
-        line-height: 1.2;
-        font-size: 1.5rem;
-        color: #fff;
-    }
-
+.content-cards .cc-panel h3 {
+    margin: 0 0 6px;
+    font-weight: 800;
+    line-height: 1.2;
+    font-size: 1.5rem;
+    color: #fff;
+}
 .content-cards .cc-copy {
     color: #e7eef7;
     line-height: 1.6;
 }
-
-    .content-cards .cc-copy p {
-        color: #fff;
-        font-size: .875rem;
-        line-height: 1.125rem;
-    }
-
-/* Responsive */
+.content-cards .cc-copy p {
+    margin: 0 0 10px;
+    font-size: .875rem;
+    line-height: 1.125rem;
+}
 @media (max-width: 1200px) {
     .content-cards .cc-grid {
         grid-template-columns: repeat(2, 360px);
         gap: 40px;
     }
 }
-
 @media (max-width: 800px) {
     .content-cards .cc-grid {
         grid-template-columns: 1fr;
@@ -176,7 +72,8 @@
         gap: 24px;
     }
 
-    .content-cards .cc-media picture, .content-cards .cc-media img {
+    .content-cards .cc-media picture,
+    .content-cards .cc-media img {
         height: 200px;
     }
 }

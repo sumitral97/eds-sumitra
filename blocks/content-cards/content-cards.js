@@ -1,11 +1,5 @@
-// blocks/content-cards/content-cards.js
-// Authoring expected: Image | Title | Body
-// Works with both <table> markup and UE <div>-based table exports.
 export default function decorate(block) {
-  // 1) Try table first
   const table = block.querySelector('table');
-
-  // 2) Or a UE-style grid: block > div (row) > div (cell)
   let rows = [];
   let mode = 'table';
 
@@ -13,25 +7,19 @@ export default function decorate(block) {
     rows = [...table.querySelectorAll('tr')];
   } else {
     mode = 'divgrid';
-    const rowNodes = [...block.children]; // block > div (rows)
-    // if the first child is a wrapper (common), dig one level
+    const rowNodes = [...block.children];
     if (rowNodes.length === 1 && rowNodes[0].children?.length) {
       rows = [...rowNodes[0].children];
     } else {
       rows = rowNodes;
     }
   }
-
-  if (!rows.length) {
-    // nothing to do
+if (!rows.length) {
     return;
   }
-
-  // Header detection
   const getText = (el) => (el?.textContent || '').trim().toLowerCase();
   const getCells = (row) => {
     if (mode === 'table') return [...row.querySelectorAll('td,th')];
-    // divgrid: row > div (cells)
     const cells = row ? [...row.children] : [];
     return cells;
   };
@@ -45,7 +33,6 @@ export default function decorate(block) {
   );
   if (headerGuess) dataRows = rows.slice(1);
 
-  // Build UL grid
   const list = document.createElement('ul');
   list.className = 'cc-grid';
 
@@ -55,8 +42,6 @@ export default function decorate(block) {
 
     const li = document.createElement('li');
     li.className = 'cc-card';
-
-    // Media: accept <picture> or <img>
     const media = imgCell?.querySelector?.('picture, img');
     if (media) {
       const wrap = document.createElement('div');
@@ -65,7 +50,6 @@ export default function decorate(block) {
       li.append(wrap);
     }
 
-    // Panel
     const panel = document.createElement('div');
     panel.className = 'cc-panel';
 
@@ -87,8 +71,6 @@ export default function decorate(block) {
     li.append(panel);
     list.append(li);
   });
-
-  // Replace original content with our cards
   block.innerHTML = '';
   block.append(list);
 }

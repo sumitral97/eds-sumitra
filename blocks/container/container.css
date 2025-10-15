@@ -1,53 +1,42 @@
-﻿/* Wrapper = full-bleed band */
-.container-container {
-    background: #062a55; /* navy band */
-    padding: 64px 24px; /* top/bottom space */
+﻿.section.container-container {
+    position: relative;
+    width: 100vw;
+    padding: 0;
+    background: #062a55;
     margin: 0px !important;
 }
-.container p {
+.section.container-container p {
+    margin: 0 auto;
+    font-size: 16px;
     color: white;
 }
 .container a {
     color: white;
     text-decoration: underline;
+
 }
-/* Centered, readable column */
 .container .container-inner {
-    max-width: 1100px; /* overall content width */
-    margin: 0 auto; /* center */
-    text-align: center; /* center text like screenshot */
+    max-width: 1100px;
+    margin: 0 auto; 
+    text-align: center; 
     color: #fff;
 }
 
-/* Big white heading */
-.container h1 {
-    margin: 0 0 16px;
-    line-height: 1.15;
-    /* fluid type: ~36–52px depending on viewport */
-    font-weight: 500;
-    margin-bottom: 30px;
-    color: #fff;
-    font-size: 36px;
-}
-
-/* Body copy */
 .container .container-copy {
-    max-width: 900px; /* narrower than heading for nice measure */
+    max-width: 900px;
     margin: 0 auto;
     line-height: 1.65;
-    color: #e7eef7; /* softer than pure white */
+    color: #e7eef7;
 }
 
-    .container .container-copy p {
-        margin: 0 0 10px;
-    }
+.container .container-copy p {
+     margin: 0 0 10px;
+}
 
-    .container .container-copy a {
-        color: #d6e6ff; /* light link on dark bg */
-        text-decoration: underline;
-    }
-
-/* Responsive spacing tweaks */
+.container .container-copy a {
+    color: #d6e6ff;
+    text-decoration: underline;
+}
 @media (max-width: 768px) {
     .container-wrapper {
         padding: 48px 20px;
@@ -57,40 +46,25 @@
         max-width: 640px;
     }
 }
-/* make the blue section full-bleed (ignore page gutters) */
-.section.container-container {
-    position: relative;
-    width: 100vw;
-    margin-top: 0; /* sit tight under the hero image */
-    padding: 0; /* outer padding handled by inner */
+
+.section.container-container > .container-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 24px;
 }
 
-    /* inner wrapper: constrain + center content */
-    .section.container-container > .container-wrapper {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 64px 24px; /* vertical space of the blue band */
-    }
-
-    /* typography + links on dark */
-    .section.container-container h1,
-    .section.container-container h2 {
-        color: #fff;
-        line-height: 1.2;
-        margin: 0 0 16px;
-        text-align: center; /* like your screenshot */
-    }
-
-    .section.container-container p {
-        margin: 0 auto;
-        font-size:16px;
-    }
-
-/* remove the global section margin that creates extra gap */
+.section.container-container h1,
+.section.container-container h2 {
+    color: #fff;
+    line-height: 1.2;
+    margin: 0 0 16px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+}
 main > .section.container-container {
     margin: 0;
 }
-
 @media (max-width: 900px) {
     .section.container-container > .container-wrapper {
         padding: 48px 16px;
