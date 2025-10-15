@@ -1,103 +1,189 @@
-/* container */
+
+.section.footer-container {
+    border-top: 4px solid #fba919;
+}
+
 .footer-wrapper {
     background: #001d4c;
 }
+
 .site-footer.v2 {
     display: grid;
     gap: 16px;
 }
-.site-footer.v2 .top {
-     display: grid;
-     gap: 24px;
-     padding: 24px;
-     background: #001d4c;
-     border-radius: 12px;
-     grid-template-columns: minmax(240px, 1.2fr) 3fr; 
-}
-.site-footer.v2 .brand-col {
-    display: grid;
-    gap: 12px;
-    align-content: start;
-}
-.site-footer.v2 .brand-logo img {
-    max-height: 56px;
-    width: auto;
-    height: auto;
-}
-.site-footer.v2 .brand-address {
-    font-style: normal;
-    line-height: 1.5;
-    margin: 0;
-    color:white;
-}
-/* links grid: 4 columns, up to 5 rows */
- .site-footer.v2 .links {
-    display: grid;
-    gap: 12px;
-}
-.site-footer.v2 .link-row {
-    display: grid;
-    gap: 8px 24px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.site-footer.v2 .link-row li a,
-.site-footer.v2 .link-row li span {
-    text-decoration: none;
-    color:white;
-    font-weight: 500;
-}
-.site-footer.v2 .link-row li a:hover {
-    text-decoration: underline;
-}
-/* divider */
-.site-footer.v2 .divider {
-    border: 0;
-    border-top: 1px solid #e2e8f0;
-    margin: 8px 0 0;
-    height: 0;
-    background: transparent;
-    opacity: 0.7;
-}
-/* bottom: two texts (left/right) */
-.site-footer.v2 .bottom {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 10px;
-    align-items: start;
-    font-size: .95rem;
-    color: #334155;
-}
-.site-footer.v2 .bottom-right {
-    justify-self: start;
-    color:white;
-}
- .site-footer.v2 .bottom-left {
-     color:white;
- }
- /* responsive */
+
+    /* top band: brand column + link grid */
+    .site-footer.v2 .top {
+        display: grid;
+        row-gap: 0px;
+        padding: 50px 24px 24px 0px;
+        background: #001d4c;
+        border-radius: 12px;
+        grid-template-columns: minmax(240px, 1.2fr) 3fr; /* brand + links */
+        column-gap: 200px;
+    }
+
+    /* brand column */
+    .site-footer.v2 .brand-col {
+        display: grid;
+        gap: 12px;
+        align-content: start;
+    }
+
+    .site-footer.v2 .brand-logo img {
+        width: auto;
+        height: auto;
+    }
+
+    .site-footer.v2 .brand-address {
+        font-style: normal;
+        line-height: 1.5;
+        margin: 0;
+        color: white; /* ink */
+    }
+
+    /* links grid: 4 columns, up to 5 rows */
+    .site-footer.v2 .links {
+        display: grid;
+        gap: 12px;
+    }
+
+    .site-footer.v2 .link-row {
+        display: grid;
+        gap: 8px 24px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .site-footer.v2 .link-row li a,
+        .site-footer.v2 .link-row li span {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+            .site-footer.v2 .link-row li a:hover {
+                text-decoration: underline;
+            }
+
+    /* divider */
+    .site-footer.v2 .divider {
+        border: 0;
+        border-top: 1px solid #e2e8f0;
+        margin: 8px 0 0;
+        height: 0;
+        background: transparent;
+        opacity: 0.7;
+    }
+
+    /* bottom band: two texts (left/right) */
+    .site-footer.v2 .bottom {
+        display: grid;
+        grid-template-columns: 1fr; /* one column, stacked */
+        row-gap: 10px;
+        align-items: start;
+        font-size: .95rem;
+        color: #334155;
+    }
+
+    /* keep everything left-aligned */
+    .site-footer.v2 .bottom-right {
+        justify-self: start;
+        color: white;
+        font-size: 14px;
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+
+    .site-footer.v2 .bottom-left {
+        color: white;
+        margin-top: 30px;
+        font-size: 14px;
+    }
+/* responsive */
 @media (max-width: 900px) {
     .site-footer.v2 .top {
         grid-template-columns: 1fr;
     }
+
     .site-footer.v2 .link-row {
         grid-template-columns: 1fr 1fr;
     }
+
     .site-footer.v2 .bottom {
         grid-template-columns: 1fr;
     }
 }
+
+
+.section.footer--navy {
+    background: #06234a;
+}
+    /* page band color */
+    .section.footer--navy .site-footer.v2 .top {
+        background: rgba(255,255,255,0.06);
+        border-color: rgba(255,255,255,0.22);
+        box-shadow: none;
+    }
+
+    .section.footer--navy .brand-address,
+    .section.footer--navy .link-row li a,
+    .section.footer--navy .link-row li span,
+    .section.footer--navy .bottom {
+        color: #dbeafe;
+    }
+    /* light text */
+    .section.footer--navy .divider {
+        border-top-color: rgba(255,255,255,0.3);
+    }
+
+    .section.footer--navy .bottom a {
+        color: #93c5fd;
+    }
+
 main .section.footer-container > div {
-    max-width: none; 
-    margin: 0; 
-    padding-left: 15px;
+    max-width: none; /* no 1200px clamp */
+    margin: 0; /* remove 0 auto centering */
+    padding-left: 15px; /* remove default side padding */
     padding-right: 15px;
 }
+
 .footer.block {
     padding-left: 60px;
     padding-right: 60px;
     margin-left: 25.4px;
     margin-right: 25.4px;
+}
+
+.brand-address a {
+    color: white;
+    text-decoration: underline;
+}
+
+.bottom-left p {
+    margin: 0px;
+}
+.bottom-right a {
+    color: white;
+    text-decoration: underline;
+}
+
+.site-footer.v2 .moved-address {
+    grid-column: 1 / -1; /* span full width under the links */
+    margin-top: 12px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* --- 3) Make link columns narrower like screenshot #2 --- */
+.site-footer.v2 .links {
+    max-width: 880px; /* keeps the links block slimmer */
+}
+
+.site-footer.v2 .link-row {
+    grid-template-columns: repeat(4, minmax(0, 190px)); /* tighter columns */
+    column-gap: 24px;
+    row-gap: 10px;
 }

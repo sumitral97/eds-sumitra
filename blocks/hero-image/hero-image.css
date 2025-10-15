@@ -1,0 +1,55 @@
+﻿/* Remove default section spacing so the hero can touch the edges */
+.hero-image-wrapper {
+    max-width: 100% !important;
+}
+.section.hero-image {
+    margin: 0; /* overrides main > .section { margin: 40px 0 } */
+    padding: 0;
+}
+
+    /* Remove inner container margins/padding applied by boilerplate */
+    .section.hero-image > div {
+        margin: 0;
+        padding: 0;
+    }
+
+/* Full-bleed trick: stretch the media to the viewport width */
+.hero-image .hero-media {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+}
+
+/* Make the image responsive and remove gaps */
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Optional: dark overlay variant (add "overlay" in Section Metadata → Styles) */
+.section.hero-image[data-style*="overlay"] .hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    pointer-events: none;
+}
+
+/* Optional: fixed viewport heights via style tokens */
+.section.hero-image[data-style*="height-70vh"] .hero-media img {
+    max-height: 70vh;
+    object-fit: cover;
+    width: 100%;
+}
+
+.section.hero-image[data-style*="height-60vh"] .hero-media img {
+    max-height: 60vh;
+    object-fit: cover;
+    width: 100%;
+}
