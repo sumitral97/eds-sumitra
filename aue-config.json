@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "editors": {
+        "default": {
+            "root": "/",
+            "documents": [
+                {
+                    "path": "/"
+                }
+            ]
+        }
+    }
+}
